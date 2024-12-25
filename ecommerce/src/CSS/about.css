@@ -1,0 +1,107 @@
+.about-page {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+  }
+  
+  .hero-section {
+    display: flex;
+    align-items: center;
+    background-color: #303972;
+    color: white;
+    padding: 50px;
+    border-radius: 10px;
+  }
+  
+  .hero-text h1 {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  .hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .btn-shop-now {
+    border-radius: 25px;
+    padding: 10px 30px;
+    font-size: 1.1rem;
+  }
+  
+  .hero-image {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-details h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 30px;
+    color: #303972;
+  }
+  
+  .about-details p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  .about-features {
+    margin-top: 50px;
+  }
+  
+  .feature-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+  }
+  
+  .feature-icon {
+    color: #303972;
+  }
+  
+  .feature-box h4 {
+    margin-top: 20px;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  
+  .feature-box p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .team-section {
+    margin-top: 80px;
+  }
+  
+  .team-cards {
+    margin-top: 30px;
+  }
+  
+  .team-card {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .team-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .team-card h5 {
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+  
+  .team-card p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+  

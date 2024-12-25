@@ -1,0 +1,33 @@
+/* Home Page Header */
+.home-header {
+    background: linear-gradient(120deg, #ff7e5f, #feb47b);
+    color: white;
+    text-align: center;
+    padding: 80px 0;
+    border-bottom: 2px solid #ffffff;
+  }
+  
+  .home-title {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-out;
+  }
+  
+  .home-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    animation: fadeIn 2.5s ease-out;
+  }
+  
+  /* Gradient Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  

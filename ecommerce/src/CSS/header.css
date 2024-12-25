@@ -1,0 +1,78 @@
+/* Reset default styles */
+body, h1, h2, h3, h4, h5, h6, p, a {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.custom-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #303972; /* Background color */
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 60px; /* Standard e-commerce height */
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* This centers the content in the middle */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff; /* White text */
+  text-decoration: none;
+  text-align: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 100px;
+  position: absolute;
+  left: 20px; /* Aligns the Cart and Order links to the left */
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #dddddd; /* Light gray text */
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+  color: #28b5e1; /* Sky blue on hover */
+}
+
+.icon-container {
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  right: 20px; /* Aligns the login/logout icons to the right */
+}
+
+.icon-link {
+  text-decoration: none;
+  color: #ffffff; /* White icons */
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.icon-link:hover {
+  color: #28b5e1; /* Sky blue on hover */
+}
+
+.icon {
+  font-size: 20px;
+}

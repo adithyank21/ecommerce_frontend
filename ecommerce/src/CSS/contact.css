@@ -1,0 +1,118 @@
+.contact-page {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+  }
+  
+  .hero-section {
+    display: flex;
+    align-items: center;
+    background-color: #303972;
+    color: white;
+    padding: 50px;
+    border-radius: 10px;
+  }
+  
+  .hero-text h1 {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  .hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-image {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-details h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 30px;
+    color: #303972;
+  }
+  
+  .contact-info {
+    margin-top: 50px;
+  }
+  
+  .contact-item {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-icon {
+    color: #303972;
+  }
+  
+  .contact-item h4 {
+    margin-top: 20px;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  
+  .contact-item p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .contact-form {
+    margin-top: 50px;
+  }
+  
+  .contact-form h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 30px;
+    color: #303972;
+  }
+  
+  .contact-form p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  .btn-send-message {
+    border-radius: 25px;
+    padding: 10px 30px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+  }
+  
+  .social-media {
+    margin-top: 50px;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .social-icon {
+    color: #303972;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .social-icon:hover {
+    color: #28b5e1;
+  }
+  
+  .social-media h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 30px;
+    color: #303972;
+  }
+  
+  .social-media p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+  

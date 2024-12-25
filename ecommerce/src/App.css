@@ -1,0 +1,94 @@
+/* Parallax container for the background */
+.parallax-container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background: linear-gradient(120deg, #ff7eb3, #ff758c); Attractive gradient background */
+  overflow: hidden;
+}
+
+/* Parallax background layer (optional animation) */
+
+
+
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Adjusted to fill the container dynamically */
+  background: url('./images/app.jpg') no-repeat center center fixed;
+  background-size: cover;
+  z-index: -1;
+  animation: backgroundScroll 10s linear infinite; /* Smooth animation */
+}
+
+/* Gradient animation */
+@keyframes gradientMove {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+/* Content container for text and card */
+.content-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+/* Center the heading and paragraph at the top */
+.text-center {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px; /* Adjust for vertical spacing */
+}
+
+/* Title styling */
+h1.animate-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Subtitle styling */
+p.animate-subtitle {
+  font-size: 1.5rem;
+  color: white;
+  margin-top: 10px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1.animate-title {
+      font-size: 2.5rem;
+  }
+  p.animate-subtitle {
+      font-size: 1.2rem;
+  }
+}

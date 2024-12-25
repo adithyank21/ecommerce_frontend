@@ -1,0 +1,66 @@
+/* OrderDetails.css */
+
+body {
+    background: linear-gradient(to right, #ffecd2, #fcb69f);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .order-details-container {
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .table th, .table td {
+    vertical-align: middle;
+  }
+  
+  .status-badge {
+    padding: 0.4em 0.8em;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .status-order-placed {
+    background-color: #17a2b8;
+  }
+  
+  .status-processing {
+    background-color: #ffc107;
+  }
+  
+  .status-shipped {
+    background-color: #007bff;
+  }
+  
+  .status-delivered {
+    background-color: #28a745;
+  }
+  
+  .status-cancelled {
+    background-color: #dc3545;
+  }
+  
+  .product-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .product-item {
+    margin-bottom: 10px;
+  }
+  
+  .product-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+  }
+  

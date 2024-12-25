@@ -1,0 +1,74 @@
+/* Styling the card container */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none; /* Remove default Bootstrap border */
+  height: 100%; /* Ensure all cards take equal height */
+  display: flex;
+  flex-direction: column; /* Align content vertically */
+}
+
+/* Card hover effect */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+/* Uniform card title styling */
+.card-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #28b5e1; /* Sky blue for contrast */
+  text-align: center;
+}
+
+/* Styling card text */
+.card-text {
+  font-size: 1rem;
+  color: #dcdcdc; /* Light gray for subtlety */
+  text-align: center;
+  margin-bottom: 15px; /* Add spacing between price and button */
+}
+
+/* Styling card buttons */
+.add-to-cart-btn {
+  background-color: #28b5e1;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-top: auto; /* Push the button to the bottom */
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.add-to-cart-btn:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  background-color: #1d9acb; /* Slightly darker sky blue */
+}
+
+.add-to-cart-btn:focus {
+  outline: none;
+}
+
+/* Ensuring consistent card image size */
+.product-image {
+  width: 100%; /* Full width of the card */
+  height: 200px; /* Fixed height for uniformity */
+  object-fit: contain; /* Scale the image proportionally without cropping */
+  margin-bottom: 15px; /* Add spacing below the image */
+  border-radius: 5px; /* Optional: rounded corners for the image */
+}
+
+/* Adjust card layout for smaller screens */
+@media (max-width: 768px) {
+  .product-image {
+    height: 150px; /* Adjust height for smaller devices */
+  }
+
+  .card-title {
+    font-size: 1.2rem; /* Smaller font for titles on small screens */
+  }
+
+  .card-text {
+    font-size: 0.9rem; /* Adjust font size for text */
+  }
+}

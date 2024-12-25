@@ -1,0 +1,19 @@
+body {
+    background: linear-gradient(135deg, #74ebd5, #9face6);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .card {
+    border-radius: 20px;
+  }
+  
+  .btn {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+  }
+  
