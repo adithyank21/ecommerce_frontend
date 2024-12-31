@@ -1,7 +1,6 @@
 
 
 
-
 import React, { useEffect, useState } from 'react';
 import { Button, Card, Container, Row, Col, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
@@ -24,7 +23,80 @@ function CheckoutPage() {
       return;
     }
 
-    // Retrieve user data from localStorage
+    if (paymentMethod === 'Razorpay') {
+      try {
+        const response = await fetch('http://localhost:5001/api/payment/create-order', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            amount: cart.reduce((total, item) => total + item.productId.price * item.quantity, 0) * 100, // Amount in paise
+            currency: 'INR',
+          }),
+        });
+
+        const orderData = await response.json();
+
+        if (orderData.success) {
+          const { order } = orderData;
+          const options = {
+            key: process.env.REACT_APP_RAZORPAY_KEY, // Your Razorpay key
+            amount: order.amount,
+            currency: order.currency,
+            name: 'Your Store',
+            description: 'Order Payment',
+            order_id: order.id,
+            handler: async function (response) {
+              try {
+                const verifyResponse = await fetch('http://localhost:5001/api/payment/verify', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({
+                    razorpay_order_id: response.razorpay_order_id,
+                    razorpay_payment_id: response.razorpay_payment_id,
+                    razorpay_signature: response.razorpay_signature,
+                  }),
+                });
+
+                const verifyData = await verifyResponse.json();
+
+                if (verifyData.success) {
+                  alert('Payment successful!');
+                  navigate('/order');
+                } else {
+                  alert('Payment verification failed!');
+                }
+              } catch (error) {
+                console.error('Error verifying payment:', error);
+                alert('Something went wrong during payment verification.');
+              }
+            },
+            prefill: {
+              name: '', // Prefilled user data
+              email: '',
+              contact: '',
+            },
+            theme: {
+              color: '#303972',
+            },
+          };
+
+          const razorpay = new window.Razorpay(options);
+          razorpay.open();
+        } else {
+          alert('Failed to create Razorpay order');
+        }
+      } catch (error) {
+        console.error('Error creating Razorpay order:', error);
+        alert('Something went wrong with Razorpay integration.');
+      }
+      return;
+    }
+
+    // Non-Razorpay order handling
     const user = JSON.parse(localStorage.getItem('user'));
     const userId = user?.id;
 
@@ -33,19 +105,17 @@ function CheckoutPage() {
       return;
     }
 
-    // Prepare the order object
     const order = {
       userId,
       address,
       paymentMethod,
       products: cart.map((item) => ({
-        productId: item.productId._id || item.productId, // Ensure productId is correctly handled
+        productId: item.productId._id || item.productId,
         quantity: item.quantity,
       })),
     };
 
     try {
-      // Send POST request to the backend
       const response = await fetch('http://localhost:5001/api/orders/place-Order', {
         method: 'POST',
         headers: {
@@ -57,12 +127,10 @@ function CheckoutPage() {
       const data = await response.json();
 
       if (response.ok) {
-        alert(data.message); // Success message
-        // Optionally navigate to another page or clear cart
+        alert(data.message);
         localStorage.removeItem('cart');
-        navigate('/order'); // Navigate to order summary or confirmation page
+        navigate('/order');
       } else {
-        // Handle error gracefully
         console.error('Error response:', data);
         alert('Error placing the order: ' + (data.message || 'Unknown error'));
       }
@@ -75,7 +143,6 @@ function CheckoutPage() {
   return (
     <Container style={{ padding: '30px' }}>
       <h1>Checkout</h1>
-      {/* Cart Summary */}
       <Row className="mb-4">
         <Col>
           <h4>Cart Summary</h4>
@@ -104,7 +171,6 @@ function CheckoutPage() {
         </Col>
       </Row>
 
-      {/* Delivery Address */}
       <Row className="mb-4">
         <Col>
           <Form>
@@ -122,20 +188,19 @@ function CheckoutPage() {
         </Col>
       </Row>
 
-      {/* Payment Method */}
       <Row className="mb-4">
         <Col>
           <Form>
             <Form.Group controlId="formPaymentMethod">
               <Form.Label>Payment Method</Form.Label>
-              <Form.Check
+              {/* <Form.Check
                 type="radio"
                 label="Credit Card"
                 name="paymentMethod"
                 value="credit card"
                 onChange={(e) => setPaymentMethod(e.target.value)}
                 style={{ marginBottom: '10px' }}
-              />
+              /> */}
               <Form.Check
                 type="radio"
                 label="Razorpay"
@@ -155,7 +220,6 @@ function CheckoutPage() {
         </Col>
       </Row>
 
-      {/* Place Order Button */}
       <Row>
         <Col>
           <Button

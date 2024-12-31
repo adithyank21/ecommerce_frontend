@@ -16,7 +16,7 @@ function Header() {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
       const user = JSON.parse(storedUser);
-      setUsername(user.name || user.phoneOrEmail); // Use name or fallback to phone/email
+      setUsername(user.name || user.email); // Use name or fallback to phone/email
       setIsLoggedIn(true);
     } else {
       setIsLoggedIn(false);
@@ -42,13 +42,22 @@ function Header() {
               <Link to="/cart" className="icon-link" style={{ color: "white" }}>
                 🛒 
               </Link>
-              <Link
-                to="/order"
-                className="nav-item"
-                style={{ color: "white" }}
-              >
-                Order
-              </Link>
+              {/* <Link to="/order" className="icon-link" style={{ color: "white" }}>
+                 Orders 
+              </Link> */}
+              <div>
+              <Link 
+  to="/order" 
+  className="icon-link" 
+  style={{ color: "white" }}
+  onClick={() => console.log("Orders link clicked!")}
+>
+  Orders
+</Link>
+</div>
+
+
+          
             </>
           )}
         </div>
